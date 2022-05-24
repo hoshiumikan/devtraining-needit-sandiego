@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_cb_topic">
+    <sys_cb_topic action="INSERT_OR_UPDATE">
+        <applicability/>
+        <applicability_mode>query</applicability_mode>
+        <autopilot_topic>false</autopilot_topic>
+        <category/>
+        <channels/>
+        <connect_queue/>
+        <description>Check Live Agent Availability</description>
+        <expose_on_palette>false</expose_on_palette>
+        <flexible_conversation_switching>true</flexible_conversation_switching>
+        <graph>{
+  "graph_api_version": "1.0.39",
+  "goals": {
+    "primary": {
+      "id": "primary",
+      "trigger": {
+        "type": "primary"
+      },
+      "name": "primary",
+      "applicability": "",
+      "description": "",
+      "nodes": {
+        "f3e4dc85b9b740dc837d60ab1b63ff36": {
+          "id": "f3e4dc85b9b740dc837d60ab1b63ff36",
+          "stepType": "Start",
+          "name": "Start",
+          "greetingResponse": {
+            "mode": "simple",
+            "value": ""
+          }
+        },
+        "de10dc3a49e34c4886f5c35f96c550c2": {
+          "id": "de10dc3a49e34c4886f5c35f96c550c2",
+          "stepType": "TerminateGoal",
+          "name": "End",
+          "confirmationMessage": {
+            "mode": "simple",
+            "value": ""
+          },
+          "outputVariables": [
+            {
+              "key": "agentAvailable",
+              "value": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": ""
+                    },
+                    {
+                      "type": "datapill",
+                      "dataPill": {
+                        "value": "{{vaVars.agentAvailable}}",
+                        "displayValue": "vaVars➛agentAvailable"
+                      },
+                      "children": [
+                        {
+                          "text": ""
+                        }
+                      ]
+                    },
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ],
+              "mode": "simple",
+              "disabled": true
+            },
+            {
+              "key": "supportQueue",
+              "value": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": ""
+                    },
+                    {
+                      "type": "datapill",
+                      "dataPill": {
+                        "value": "{{vaVars.supportQueue}}",
+                        "displayValue": "vaVars➛supportQueue"
+                      },
+                      "children": [
+                        {
+                          "text": ""
+                        }
+                      ]
+                    },
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ],
+              "mode": "simple",
+              "disabled": false
+            },
+            {
+              "key": "waitingTime",
+              "value": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": ""
+                    },
+                    {
+                      "type": "datapill",
+                      "dataPill": {
+                        "value": "{{vaVars.waitingTime}}",
+                        "displayValue": "vaVars➛waitingTime"
+                      },
+                      "children": [
+                        {
+                          "text": ""
+                        }
+                      ]
+                    },
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ],
+              "mode": "simple",
+              "disabled": false
+            }
+          ]
+        },
+        "89f14bdf9fc243169a3c59a48bdea4bb": {
+          "id": "89f14bdf9fc243169a3c59a48bdea4bb",
+          "stepType": "ScriptOutput",
+          "name": "Get Agent Info",
+          "output_type": "single_part",
+          "script": "(function execute() {\n    var result = vaSystem.getAgentTopicInfo();\n    vaVars.agentAvailable = result.agent_available;\n    vaVars.supportQueue = result.support_queue;\n    vaVars.waitingTime = result.waiting_time;\n})()\n",
+          "applicability": {
+            "value": "",
+            "mode": "query"
+          }
+        }
+      },
+      "edges": [
+        {
+          "id": "e84b316bb5ab42218b797f198e3d8f9b",
+          "edgeType": "Edge",
+          "source": "f3e4dc85b9b740dc837d60ab1b63ff36",
+          "target": "89f14bdf9fc243169a3c59a48bdea4bb",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "738c1bc466ee435abfcd952ee427d62d",
+          "edgeType": "Edge",
+          "source": "89f14bdf9fc243169a3c59a48bdea4bb",
+          "target": "de10dc3a49e34c4886f5c35f96c550c2",
+          "sourcePort": "",
+          "targetPort": ""
+        }
+      ]
+    }
+  },
+  "variables": {
+    "f87eb69f8482464a8eb0f5041af6281a": {
+      "category": "vaInputs",
+      "id": "f87eb69f8482464a8eb0f5041af6281a",
+      "label": "User",
+      "name": "user",
+      "table": "sys_user",
+      "varType": "reference"
+    },
+    "7c29fa37fff644dfa0be918fdce591de": {
+      "id": "7c29fa37fff644dfa0be918fdce591de",
+      "value": {
+        "value": "",
+        "mode": "simple"
+      },
+      "name": "agentAvailable",
+      "label": "agentAvailable",
+      "varType": "script",
+      "category": "vaVars"
+    },
+    "c735657fb5764b49a42b4855b48b7dfb": {
+      "id": "c735657fb5764b49a42b4855b48b7dfb",
+      "value": {
+        "value": "",
+        "mode": "simple"
+      },
+      "name": "supportQueue",
+      "label": "supportQueue",
+      "varType": "script",
+      "category": "vaVars"
+    },
+    "d5b69466417d403195ae36ebbcc5675a": {
+      "id": "d5b69466417d403195ae36ebbcc5675a",
+      "value": {
+        "value": "",
+        "mode": "simple"
+      },
+      "name": "waitingTime",
+      "label": "waitingTime",
+      "varType": "script",
+      "category": "vaVars"
+    }
+  }
+}</graph>
+        <key_phrases/>
+        <library>true</library>
+        <live_agent>false</live_agent>
+        <name>Report IT Issue</name>
+        <nlu_intent/>
+        <nlu_intent_label/>
+        <nlu_model/>
+        <nlu_model_label/>
+        <nlu_provider/>
+        <palette_label/>
+        <roles/>
+        <secure_custom_input_control>false</secure_custom_input_control>
+        <source_topic_id>da4407845346101042a9ddeeff7b1262</source_topic_id>
+        <sys_class_name>sys_cb_topic</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-05-24 05:23:11</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>3349e1932f63c190a0d628a62799b678</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Report IT Issue</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>sys_cb_topic_3349e1932f63c190a0d628a62799b678</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-05-24 05:23:34</sys_updated_on>
+        <triggerable_by_notification>false</triggerable_by_notification>
+        <type>TOPIC_BLOCK</type>
+        <variables/>
+    </sys_cb_topic>
+    <sys_variable_value action="delete_multiple" query="document_key=3349e1932f63c190a0d628a62799b678"/>
+</record_update>

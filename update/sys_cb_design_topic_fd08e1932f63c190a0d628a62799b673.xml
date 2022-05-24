@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_cb_design_topic">
+    <sys_cb_design_topic action="INSERT_OR_UPDATE">
+        <compiled_topic display_value="_PRVW__5d08e1931763c1901b0c6dcbad3cb66c">ad08e1932f63c190a0d628a62799b66d</compiled_topic>
+        <design_definition>{"type":"FlowTopic","triggers":[{"type":"Trigger","name":"3609ab1570434000a07c0eca30d33321","triggerType":"request","applicability":{"type":"Applicability","mode":"script","value":"true"},"id":"3609ab1570434000a07c0eca30d33321"}],"goals":[{"name":"primary","trigger_id":"3609ab1570434000a07c0eca30d33321","nodes":[{"type":"StartGoal","goal_id":"primary","greeting_msg":{"type":"String","mode":"string","value":""},"id":"0918de53a11345469d4aa27ca205d554","name":"Start"},{"type":"TerminateGoal","goal_id":"primary","confirmation_msg":{"type":"String","mode":"string","value":""},"id":"a05f01d5daab49d3bc4d2ad69bd3ec81","name":"End"},{"type":"ScriptOutputPrompt","output_type":"single_part","id":"decf5866802e4bcf8cd0be05747a1daf","name":"Get Agent Info","goal_id":"primary","applicability":{"type":"Applicability","mode":"script","value":"true"},"value":{"type":"String","mode":"string","value":"(function execute() {\n    var result = vaSystem.getAgentTopicInfo();\n    vaVars.agentAvailable = result.agent_available;\n    vaVars.supportQueue = result.support_queue;\n    vaVars.waitingTime = result.waiting_time;\n})()\n"},"secure":false}],"edges":[{"type":"Edge","source_node_id":"0918de53a11345469d4aa27ca205d554","target_node_id":"decf5866802e4bcf8cd0be05747a1daf","id":"a674aa6eba0844de8aa018d16f01c96d"},{"type":"Edge","source_node_id":"decf5866802e4bcf8cd0be05747a1daf","target_node_id":"a05f01d5daab49d3bc4d2ad69bd3ec81","id":"55ed959c6144460faaf5af6964f46a2c"}],"id":"primary"}],"script_variables":[{"type":"String","name":"agentAvailable","value":{"type":"String","mode":"string"},"list":false,"id":"e8f14570b553407ea88201bc3252ebb6","formatType":"text","secure":false,"sensitive":false},{"type":"String","name":"supportQueue","value":{"type":"String","mode":"string"},"list":false,"id":"b3c5c8f4b9374ccf9e74b8e30b1001cc","formatType":"text","secure":false,"sensitive":false},{"type":"String","name":"waitingTime","value":{"type":"String","mode":"string"},"list":false,"id":"479d0f1e24304070867b958689a1551c","formatType":"text","secure":false,"sensitive":false}],"glide_variables":[{"type":"Reference","table":"sys_user","id":"current-user","name":"user","formatType":"text","secure":false,"sensitive":false,"list":false}],"applicability":{"type":"Applicability","mode":"script","value":"true"},"roles":[],"scope":"global","library-usage":{"type":"Library","input-parameters":[],"return-values-mapping":[{"name":"agentavailable","label":"agentAvailable","value":{"type":"String","mode":"string","value":"{{vaVars.agentAvailable}}"}},{"name":"supportqueue","label":"supportQueue","value":{"type":"String","mode":"string","value":"{{vaVars.supportQueue}}"}},{"name":"waitingtime","label":"waitingTime","value":{"type":"String","mode":"string","value":"{{vaVars.waitingTime}}"}}]},"domain":"global","topic_type":"TOPIC_BLOCK","channels":[],"id":"da4407845346101042a9ddeeff7b1262","name":"_PRVW__5d08e1931763c1901b0c6dcbad3cb66c","key_phrases":[],"nlu_provider":"","nlu_model":"","nlu_model_label":"","nlu_intent":"","nlu_intent_label":"","flexible_conversation_switching":true,"autopilot_topic":false,"design_categories":[],"triggerable_by_notification":false,"library":true,"readOnly":true,"nluMapping":"[]"}</design_definition>
+        <design_topic_id>da4407845346101042a9ddeeff7b1262</design_topic_id>
+        <name>_PRVW__5d08e1931763c1901b0c6dcbad3cb66c</name>
+        <sys_class_name>sys_cb_design_topic</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-05-24 05:17:34</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>fd08e1932f63c190a0d628a62799b673</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>FlowTopic</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>sys_cb_design_topic_fd08e1932f63c190a0d628a62799b673</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-05-24 05:17:34</sys_updated_on>
+        <type>FlowTopic</type>
+    </sys_cb_design_topic>
+</record_update>

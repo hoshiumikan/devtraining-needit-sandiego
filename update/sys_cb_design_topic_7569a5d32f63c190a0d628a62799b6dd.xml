@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_cb_design_topic">
+    <sys_cb_design_topic action="INSERT_OR_UPDATE">
+        <compiled_topic display_value="Report IT Issue">b569a9db2f23c190a0d628a62799b6f6</compiled_topic>
+        <design_definition>{"type":"FlowTopic","triggers":[{"type":"Trigger","name":"7e324f9f2f5f42b8a8611a1053fa90e2","triggerType":"request","applicability":{"type":"Applicability","mode":"script","value":"true"},"id":"7e324f9f2f5f42b8a8611a1053fa90e2"}],"goals":[{"name":"primary","trigger_id":"7e324f9f2f5f42b8a8611a1053fa90e2","nodes":[{"type":"StartGoal","goal_id":"primary","greeting_msg":{"type":"String","mode":"string","value":""},"id":"f3e4dc85b9b740dc837d60ab1b63ff36","name":"Start"},{"type":"TerminateGoal","goal_id":"primary","confirmation_msg":{"type":"String","mode":"string","value":""},"id":"de10dc3a49e34c4886f5c35f96c550c2","name":"End"},{"type":"ScriptOutputPrompt","output_type":"single_part","id":"89f14bdf9fc243169a3c59a48bdea4bb","name":"Get Agent Info","goal_id":"primary","applicability":{"type":"Applicability","mode":"script","value":"true"},"value":{"type":"String","mode":"string","value":"(function execute() {\n    var result = vaSystem.getAgentTopicInfo();\n    vaVars.agentAvailable = result.agent_available;\n    vaVars.supportQueue = result.support_queue;\n    vaVars.waitingTime = result.waiting_time;\n})()\n"},"secure":false}],"edges":[{"type":"Edge","source_node_id":"f3e4dc85b9b740dc837d60ab1b63ff36","target_node_id":"89f14bdf9fc243169a3c59a48bdea4bb","id":"e84b316bb5ab42218b797f198e3d8f9b"},{"type":"Edge","source_node_id":"89f14bdf9fc243169a3c59a48bdea4bb","target_node_id":"de10dc3a49e34c4886f5c35f96c550c2","id":"738c1bc466ee435abfcd952ee427d62d"}],"id":"primary"}],"script_variables":[{"type":"String","name":"agentAvailable","value":{"type":"String","mode":"string"},"list":false,"id":"7c29fa37fff644dfa0be918fdce591de","formatType":"text","secure":false,"sensitive":false},{"type":"String","name":"supportQueue","value":{"type":"String","mode":"string"},"list":false,"id":"c735657fb5764b49a42b4855b48b7dfb","formatType":"text","secure":false,"sensitive":false},{"type":"String","name":"waitingTime","value":{"type":"String","mode":"string"},"list":false,"id":"d5b69466417d403195ae36ebbcc5675a","formatType":"text","secure":false,"sensitive":false}],"glide_variables":[{"type":"Reference","table":"sys_user","id":"f87eb69f8482464a8eb0f5041af6281a","name":"user","formatType":"text","secure":false,"sensitive":false,"list":false}],"applicability":{"type":"Applicability","mode":"script","value":"true"},"roles":[],"scope":"6ead8e780f603200cd674f8ce1050ed1","library-usage":{"type":"Library","input-parameters":[],"return-values-mapping":[{"name":"agentavailable","label":"agentAvailable","value":{"type":"String","mode":"string","value":"{{vaVars.agentAvailable}}"}},{"name":"supportqueue","label":"supportQueue","value":{"type":"String","mode":"string","value":"{{vaVars.supportQueue}}"}},{"name":"waitingtime","label":"waitingTime","value":{"type":"String","mode":"string","value":"{{vaVars.waitingTime}}"}}]},"domain":"global","topic_type":"TOPIC_BLOCK","channels":[],"id":"3349e1932f63c190a0d628a62799b678","name":"Report IT Issue","key_phrases":[],"nlu_provider":"","nlu_model":"","nlu_model_label":"","nlu_intent":"","nlu_intent_label":"","flexible_conversation_switching":true,"autopilot_topic":false,"design_categories":[],"triggerable_by_notification":false,"library":true,"readOnly":false,"nluMapping":"[]"}</design_definition>
+        <design_topic_id>3349e1932f63c190a0d628a62799b678</design_topic_id>
+        <name>Report IT Issue</name>
+        <sys_class_name>sys_cb_design_topic</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-05-24 05:23:35</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>7569a5d32f63c190a0d628a62799b6dd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>FlowTopic</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>sys_cb_design_topic_7569a5d32f63c190a0d628a62799b6dd</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-05-24 05:23:35</sys_updated_on>
+        <type>FlowTopic</type>
+    </sys_cb_design_topic>
+</record_update>
